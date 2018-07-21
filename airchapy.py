@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import json
+import os
 
 # Variables
 pid = ""
@@ -84,6 +85,8 @@ folder = "/bin"
 keys = {}
 rtable = {}
 
+os.umask(077)
+
 def save_settings():
     data = {}
     data['fldigi_xmlrpc_server_url'] = fldigi_xmlrpc_server_url
@@ -120,3 +123,11 @@ def save_settings():
     print json_data
 
 save_settings()
+
+def load_settings():
+    print "/bin" #print $FindBin::Bin;
+
+    if (os.path.exists(".airchapysettings")
+            config_file = "/.airchappysettings"
+            with open(config_file, "r+") as f:
+                
